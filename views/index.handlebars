@@ -1,0 +1,60 @@
+<h1 class="center">BURGERS!</h1>
+
+<div class="row">
+
+
+    <div class="col s4">
+        <div class="card grey lighten-3">
+
+            <h2>Everybody loves burgers. You have the power to make any burger you want and DEVOUR it!</h2>
+            <div class="card-content white-text">
+                <ul>
+                    {{#each Burgers}} {{#unless devoured}}
+                    <div class="card-action z-depth-2 grey darken-2">
+                        <li>
+                            <h4>{{id}}: {{burgerType}}</h4>
+
+                            <button class="devour btn waves-effect waves-light grey" data-id="{{id}}" data-devourIt="{{devourIt}}">{{devourIt}}Devour!</button>
+                        </li>
+                    </div>
+                    {{/unless}} {{/each}}
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="col s4">
+        <div class="card grey lighten-3">
+            <h2>Create a Burger</h2>
+            <div class="card-content white-text">
+                <form class="createBurger ">
+                    <div class="form-group">
+                        <label for="burg"> Burger Name:</label>
+                        <input type="text" id="burg" name="name">
+                    </div>
+
+                    <button class="btn waves-effect waves-light grey"type="submit">Create Burger</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="col s4">
+        <div class="card grey lighten-3 ">
+            <h2>The Burgers that have been DEVOURED!</h2>
+            <div class="card-content">
+                <ul>
+
+                    {{#each Burgers}} {{#if devoured}}
+                    <li>
+                        <h4>{{id}}: {{burgerType}}</h4>
+                    </li>
+                    {{/if}} {{/each}}
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+</div>
